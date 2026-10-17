@@ -51,16 +51,17 @@ p{margin:0 0 1em}
 
 /* header: solid white, never see-through */
 .top{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
-.top-in{display:flex;align-items:center;gap:28px;height:72px;max-width:1320px}
+.top-in{display:flex;align-items:center;gap:20px;height:72px;max-width:1320px}
 .brand{flex:none}.brand img{height:38px;width:auto}
-.nav{display:flex;gap:24px;margin-left:auto;font-size:.93rem;font-weight:400}
+.nav{display:flex;gap:20px;margin-left:auto;font-size:.92rem;font-weight:400}
 .nav a{color:var(--ink2);white-space:nowrap}
 .tel span{white-space:nowrap}
 html[lang=es] .nav{gap:18px}
 @media(max-width:1700px){html[lang=es] .top-cta .tel span{display:none}}
 @media(max-width:1300px){html[lang=es] .nav{display:none}html[lang=es] .menu{display:block}html[lang=es] .top-cta{margin-left:auto}}.nav a:hover,.nav a[aria-current]{color:var(--ink);text-decoration:none}
 .nav a[aria-current]{box-shadow:inset 0 -2px 0 var(--navy)}
-.top-cta{display:flex;align-items:center;gap:16px}
+.top-cta{display:flex;align-items:center;gap:14px}
+@media(max-width:1440px){.top-cta .tel span{display:none}}
 .lang{font-size:.86rem;font-weight:400;color:var(--ink2)}
 .tel{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:var(--ink);font-size:.93rem}
 .tel svg{width:16px;height:16px;fill:var(--navy)}
