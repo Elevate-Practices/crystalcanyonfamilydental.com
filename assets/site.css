@@ -79,10 +79,10 @@ html[lang=es] .nav{gap:18px}
 
 /* hero */
 .hero{padding:clamp(40px,6vw,88px) 0 clamp(64px,8vw,112px)}
-.hero-in{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(32px,5vw,72px);align-items:center}
-.hero h1{margin-bottom:22px}
+.hero-in{display:grid;grid-template-columns:.85fr 1.25fr;gap:clamp(32px,4vw,64px);align-items:center;max-width:1360px}
+.hero h1{margin-bottom:22px;font-size:clamp(2.6rem,4.6vw,4.2rem)}
 .hero-sub{font-size:clamp(1.1rem,1.7vw,1.32rem);line-height:1.5;color:var(--ink2);max-width:30em;margin:0}
-.hero-photo img{width:100%;aspect-ratio:5/4;object-fit:cover;object-position:50% 38%;border-radius:var(--r-photo)}
+.hero-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:50% 45%;border-radius:var(--r-photo)}
 .chips{list-style:none;padding:0;margin:28px 0 0;display:flex;flex-wrap:wrap;gap:10px}
 .chips li{display:inline-flex;align-items:center;gap:8px;background:var(--gray);border-radius:var(--pill);padding:8px 14px;font-size:.88rem;font-weight:600;color:var(--ink2)}
 .chips svg{width:16px;height:16px;fill:#E8A317}
