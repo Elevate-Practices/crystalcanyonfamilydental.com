@@ -51,16 +51,17 @@ p{margin:0 0 1em}
 
 /* header: solid white, never see-through */
 .top{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
-.top-in{display:flex;align-items:center;gap:20px;height:72px;max-width:1320px}
+.top-in{display:flex;align-items:center;flex-wrap:nowrap;gap:20px;height:72px;max-width:1320px}
 .brand{flex:none}.brand img{height:38px;width:auto}
-.nav{display:flex;gap:20px;margin-left:auto;font-size:.92rem;font-weight:400}
+.nav{display:flex;flex-wrap:nowrap;gap:20px;margin-left:auto;font-size:.92rem;font-weight:400}
 .nav a{color:var(--ink2);white-space:nowrap}
 .tel span{white-space:nowrap}
 html[lang=es] .nav{gap:18px}
 @media(max-width:1700px){html[lang=es] .top-cta .tel span{display:none}}
 @media(max-width:1300px){html[lang=es] .nav{display:none}html[lang=es] .menu{display:block}html[lang=es] .top-cta{margin-left:auto}}.nav a:hover,.nav a[aria-current]{color:var(--ink);text-decoration:none}
 .nav a[aria-current]{box-shadow:inset 0 -2px 0 var(--navy)}
-.top-cta{display:flex;align-items:center;gap:14px}
+.top-cta{display:flex;align-items:center;flex-wrap:nowrap;gap:14px}
+.top-cta .lang,.top-cta .btn{white-space:nowrap}
 @media(max-width:1440px){.top-cta .tel span{display:none}}
 .lang{font-size:.86rem;font-weight:400;color:var(--ink2)}
 .tel{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:var(--ink);font-size:.93rem}
@@ -74,6 +75,27 @@ html[lang=es] .nav{gap:18px}
 .menu-panel a{padding:12px 14px;border-radius:12px;color:var(--ink);font-weight:400}
 .menu-panel a:hover{background:var(--gray);text-decoration:none}
 .menu-panel .btn{margin-top:8px;color:#fff}
+/* services mega menu (Chris, Oct 19 2026): opaque white panel under the header, one column per group + a gray "Not sure?" card */
+.has-mega{position:static;display:flex;align-items:center}
+.has-mega>a{display:inline-flex;align-items:center;gap:4px}
+.has-mega>a .chev{width:14px;height:14px;transition:transform .2s;opacity:.7}
+.mega{position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 30px 60px -20px rgba(4,47,95,.28);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .18s,transform .18s,visibility 0s .18s;font-size:.93rem;font-weight:400}
+.has-mega:hover .mega,.has-mega:focus-within .mega{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.has-mega:hover>a .chev,.has-mega:focus-within>a .chev{transform:rotate(180deg)}
+.mega-in{display:grid;grid-template-columns:repeat(4,auto) 1fr;gap:28px;padding:30px var(--gut) 34px}
+.mega-col{display:grid;align-content:start;gap:4px}
+.mega-h{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--ink);margin:0 0 6px;font-size:.98rem;letter-spacing:-.01em;white-space:nowrap}
+.mega-all .mega-h{white-space:normal}
+.mega-ic{width:36px;height:36px;border-radius:12px;background:var(--gray);display:grid;place-items:center;flex:none}
+.mega-ic .ln{width:20px;height:20px}
+.nav .mega-col>a:not(.btn):not(.more){color:var(--ink2);padding:5px 0;box-shadow:none}
+.nav .mega-col>a:not(.btn):not(.more):hover,.nav .mega-col>a[aria-current]{color:var(--navy);text-decoration:none}
+.mega-all{background:var(--gray);border-radius:var(--r-card);padding:22px 24px;gap:12px;justify-items:start}
+.mega-all .mega-h{margin:0}
+.mega-p{margin:0;color:var(--mut);font-size:.9rem;line-height:1.5}
+.nav .mega .btn,.nav .mega .btn:hover{color:#fff;opacity:1;font-size:.93rem;min-height:42px;padding:0 20px}   /* .nav a would otherwise dim the button text */
+.nav .mega .more,.nav .mega .more:hover{color:var(--sky-t);text-decoration:none}
+.nav .mega .more:hover svg{transform:translateX(3px)}
 @media(max-width:1180px){.nav{display:none}.top-cta{margin-left:auto}}
 @media(max-width:1180px){.menu{display:block}}
 @media(max-width:720px){.top-cta .tel span,.top-cta .lang{display:none}.top-cta .btn{display:none}.brand img{height:32px}.top-in{height:64px}}
