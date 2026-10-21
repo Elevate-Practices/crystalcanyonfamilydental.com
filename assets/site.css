@@ -105,8 +105,7 @@ html[lang=es] .nav{gap:18px}
 .hero-in{display:grid;grid-template-columns:.85fr 1.25fr;gap:clamp(32px,4vw,64px);align-items:center;max-width:1360px}
 .hero h1{margin-bottom:22px;font-size:clamp(2.6rem,4.6vw,4.2rem)}
 .hero-sub{font-size:clamp(1.1rem,1.7vw,1.32rem);line-height:1.5;color:var(--ink2);max-width:30em;margin:0}
-.hero-photo{overflow:hidden;border-radius:var(--r-photo)}
-.hero-photo img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:50% 45%;border-radius:var(--r-photo);transform-origin:center;animation:kenburns 14s ease-in-out infinite alternate;will-change:transform}
+.hero-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:50% 45%;border-radius:var(--r-photo)}
 .chips{list-style:none;padding:0;margin:28px 0 0;display:flex;flex-wrap:wrap;gap:10px}
 .chips li{display:inline-flex;align-items:center;gap:8px;background:var(--gray);border-radius:var(--pill);padding:8px 14px;font-size:.88rem;font-weight:600;color:var(--ink2)}
 .chips svg{width:16px;height:16px;fill:#E8A317}
@@ -122,8 +121,7 @@ html[lang=es] .nav{gap:18px}
 .head.center h2{margin-left:auto;margin-right:auto}
 .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,88px);align-items:center}
 .split.top-al{align-items:start}
-.photo-r{overflow:hidden;border-radius:var(--r-photo)}
-.photo-r img{display:block;width:100%;aspect-ratio:4/3.4;object-fit:cover;border-radius:var(--r-photo);transform-origin:center;animation:kenburns 14s ease-in-out infinite alternate;will-change:transform}
+.photo-r img{width:100%;aspect-ratio:4/3.4;object-fit:cover;border-radius:var(--r-photo)}
 @media(max-width:900px){.split{grid-template-columns:1fr}}
 
 /* navy band: Toothache today? */
@@ -234,16 +232,12 @@ section:not(.gray) .tier{background:var(--gray)}
 .crumbs ol{list-style:none;padding:0;margin:0 0 28px;display:flex;flex-wrap:wrap;gap:6px;font-size:.86rem;color:var(--mut)}
 .crumbs li+li::before{content:"›";margin-right:6px}
 .crumbs a{color:var(--mut)}
-.band:not(.band-post) .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,4vw,64px);align-items:center}
-.band .crumbs{grid-column:1/-1}
 .band-copy{max-width:820px}
-.band h1{font-size:clamp(2.2rem,3.6vw,3.4rem)}
+.band h1{font-size:clamp(2.4rem,5vw,4rem)}
 .band-sub{font-size:clamp(1.08rem,1.7vw,1.3rem);line-height:1.5;color:var(--ink2);margin:0}
-.band-photo{margin:0;overflow:hidden;border-radius:var(--r-photo)}
-.band-photo img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r-photo);transform-origin:center;animation:kenburns 14s ease-in-out infinite alternate;will-change:transform}
-@keyframes kenburns{from{transform:scale(1) translate(0,0)}to{transform:scale(1.25) translate(-4%,2.5%)}}
-@media(max-width:900px){.band:not(.band-post) .wrap{grid-template-columns:1fr}.band-photo{margin-top:8px}}
-@media(prefers-reduced-motion:reduce){.band-photo img,.hero-photo img,.photo-r img{animation:none}}
+.band-photo{margin-top:clamp(36px,5vw,56px)}
+.band-photo img{width:100%;aspect-ratio:21/9;object-fit:cover;border-radius:var(--r-photo)}
+@media(max-width:700px){.band-photo img{aspect-ratio:4/3}}
 
 /* articles */
 .art{display:grid;grid-template-columns:1fr 360px;gap:clamp(32px,5vw,72px);align-items:start}
@@ -329,3 +323,7 @@ section:not(.gray) .tier{background:var(--gray)}
   body.has-chat .dock{padding-right:84px}
 }
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* hover pill on mega-menu links, Gunnell-style (Chris, Oct 19 2026) */
+.nav .mega-col>a:not(.btn):not(.more){padding:7px 10px;margin-inline:-10px;border-radius:8px;transition:background .15s,color .15s}
+.nav .mega-col>a:not(.btn):not(.more):hover,.nav .mega-col>a:not(.btn):not(.more)[aria-current]{background:var(--tint);color:var(--navy);text-decoration:none;opacity:1}
